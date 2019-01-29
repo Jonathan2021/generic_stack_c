@@ -20,7 +20,7 @@ Stack<T>::~Stack()
 template <typename T>
 bool Stack<T>::empty() const
 {
-    return (top >= 0);
+    return (top < 0);
 }
 
 template <typename T>
@@ -71,7 +71,7 @@ std::ostream& operator<<(std::ostream& ost, const Stack<U>& s)
 {
     for (int i = 0; i < s.top; ++i)
     {
-        ost << s.array[i] << "";
+        ost << s.array[i] << " ";
     }
     if (s.top >= 0)
         ost << s.array[s.top];

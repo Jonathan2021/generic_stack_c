@@ -1,7 +1,6 @@
 #pragma once
 
 #include <iostream>
-#include <optional>
 
 template <typename T>
 class Stack
@@ -11,8 +10,8 @@ class Stack
         ~Stack();
         bool empty() const;
         unsigned size() const;
-        std::optional<T&> peek();
-        std::optional<const T&> peek() const;
+        T* peek();
+        const T* peek() const;
         bool push(const T& elt);
         void pop();
         template <typename U>

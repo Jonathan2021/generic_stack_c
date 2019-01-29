@@ -32,21 +32,21 @@ unsigned Stack<T>::size() const
 }
 
 template <typename T>
-std::optional<T&> Stack<T>::peek()
+T* Stack<T>::peek()
 {
     if (this->top < 0)
-        return std::nullopt;
+        return 0;
     else
-        return std::optional<T&>{this->array[this->top]};
+        return &this->array[this->top];
 }
 
 template <typename T>
-std::optional<const T&> Stack<T>::peek() const
+const T* Stack<T>::peek() const
 {
     if (this->top < 0)
-        return std::nullopt;
+        return 0;
     else
-        return std::optional<T&>{this->array[this->top]};
+        return &this->array[this->top];
 }
 
 template <typename T>
